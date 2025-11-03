@@ -7,9 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1Lj7pqAuYvV4I8hmHSFAkN_INCXmSKEuK
 """
 
-from google.colab import drive
-drive.mount('/content/drive')
-
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,7 +16,7 @@ plt.style.use('ggplot')
 import nltk
 nltk.download('punkt')
 
-df=pd.read_csv('/content/drive/MyDrive/Reviews.csv/Reviews.csv')
+df=pd.read_csv("C:\Users\KUSHAGRA\Downloads\Reviews.csv\Reviews.csv")
 df.head()
 
 ax =df['Score'].value_counts().sort_index()\
