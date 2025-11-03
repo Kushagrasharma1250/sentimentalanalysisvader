@@ -15,8 +15,13 @@ import seaborn as sns
 plt.style.use('ggplot')
 import nltk
 nltk.download('punkt')
+import streamlit as st
+import pandas as pd
 
-df=pd.read_csv("C:\Users\KUSHAGRA\Downloads\Reviews.csv\Reviews.csv")
+uploaded_file = st.file_uploader("C:\Users\KUSHAGRA\Downloads\Reviews.csv\Reviews.csv", type="csv")
+if uploaded_file:
+    df = pd.read_csv(uploaded_file)
+    st.write(df.head())
 df.head()
 
 ax =df['Score'].value_counts().sort_index()\
